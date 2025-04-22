@@ -107,6 +107,31 @@ public class Main {
         }
     }
     public static void eliminarLibro(){
+        if(!coleccionLibros.isEmpty()){
+            String salida=mostrarLibros();
+            String idEliminar=JOptionPane.showInputDialog(null,salida+"\nIngrese el id del libro");
+            int id;
+            boolean eliminado=false;
+            try{
+                id=Integer.parseInt(idEliminar);
+                Iterator<Libro> it=coleccionLibros.iterator();
+                while(it.hasNext()){
+                    Libro libro=it.next();
+                    if(libro.getIdLibro()==id){
+                        it.remove();
+                        eliminado=true;
+                    }
+                }
+            if(!eliminado){
+                JOptionPane.showMessageDialog(null,"El ID del libro no existe");
+            }
+            mostrar();
+            }catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null,"Ingrese un numero valido");
+            }
+        }else{
+            mostrar();
+        }
 
     }
     public static void mostrar(){
