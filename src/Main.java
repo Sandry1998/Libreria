@@ -68,7 +68,7 @@ public class Main {
             try{
                 opcionModificar= Integer.parseInt(queModificar);
                 idLibroModificar= Integer.parseInt(modificarId);
-                Iterator<Libro> it=coleccionLibros.iterator();
+                Iterator<Libro> it=coleccionLibros.iterator();//se utiliza para modificar o eliminar elementos
                 while(it.hasNext()){
                     Libro libro=it.next();
                     if(libro.getIdLibro()==idLibroModificar){
@@ -114,7 +114,7 @@ public class Main {
             boolean eliminado=false;
             try{
                 id=Integer.parseInt(idEliminar);
-                Iterator<Libro> it=coleccionLibros.iterator();
+                Iterator<Libro> it=coleccionLibros.iterator();//se utiliza para modificar o eliminar elementos
                 while(it.hasNext()){
                     Libro libro=it.next();
                     if(libro.getIdLibro()==id){
